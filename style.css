@@ -86,7 +86,7 @@ input[type="range"] {
     background-position: center;
     background-size: 100%;
     cursor: ew-resize;
-    transition: background .3s ease-in-out;
+    transition: all .3s ease-in-out;
     display: block;
   }
   input[type="range"]::-moz-range-thumb {
