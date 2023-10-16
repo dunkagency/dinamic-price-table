@@ -65,34 +65,65 @@ body {
 input[type="range"] {
     -webkit-appearance: none;
     appearance: none;
-    width: 100%;
+    width: calc(100% - 100px);
     height: 16px;
     background: #f2f2f2;
-    border-radius: 8px;
+    border-radius: 0;
     background-image: linear-gradient(#A4DDED, #A4DDED);
     background-size: 0% 100%;
     background-repeat: no-repeat;
+    margin: 0 50px;
+    position: relative;
+    border: 1px solid #403266;
+}
+
+input[type="range"]::after {
+    content: "";
+    width: 50px;
+    height: 16px;
+    border-radius: 8px 0 0 8px;
+    position: absolute;
+    left: -50px;
+    top: -1px;
+    border: 1px solid #403266;
+    border-right: 0;
+    background-image: linear-gradient(#A4DDED, #A4DDED);
+  }
+
+  input[type="range"]::before {
+    content: "";
+    width: 50px;
+    height: 16px;
+    border-radius: 0 8px 8px 0;
+    position: absolute;
+    right: -50px;
+    top: -1px;
+    border: 1px solid #403266;
+    border-left: 0;
+    background: #f2f2f2;
   }
   
   input[type="range"]::-webkit-slider-thumb  {
     -webkit-appearance: none;
     appearance: none;
-    height: 35px;
-    width: 60px;    
+    height: 27px;
+    width: 27px;    
     background-repeat: no-repeat;
-    border-radius: 16px;
-    background-image: url(thumb.png);
+    border-radius: 50%;
+    background-image: url(thumb-2.png);
     background-color: transparent;
     background-position: center;
     background-size: 100%;
     cursor: ew-resize;
     transition: all .3s ease-in-out;
     display: block;
+    position: relative;
+    z-index: 1;
   }
   input[type="range"]::-moz-range-thumb {
     appearance: none;
-    height: 35px;
-    width: 60px;
+    height: 27px;
+    width: 27px;
     border: none; 
     background-repeat: no-repeat;
     border-radius: 16px;
@@ -116,12 +147,25 @@ input[type="range"] {
 .markers {
     display: flex;
     margin: 16px 0;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .markers .marker {
     color: #403266;
     font-size: 20px;
     opacity: 0.3;
+    flex: 1;
+    text-align: center;
+}
+
+.markers .marker.active {
+    opacity: 1;
+}
+
+.starter-col.inactive {
+    opacity: 0.3;
+}
+.starter-col.active {
+    opacity: 1;
 }
 
