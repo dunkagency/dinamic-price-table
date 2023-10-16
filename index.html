@@ -24,10 +24,7 @@
       padding: 8px;
       text-align: center;
     }
-
-    .accordion-content {
-      display: none;
-    }
+  
   </style>
 </head>
 
@@ -50,8 +47,6 @@
 
 
     <div class="slider-range">
-      <label for="clientCount">Number of Clients:</label>
-
       <div class="markers">
         <div class="marker marker-0">500</div>
         <div class="marker marker-15">2.500</div>
@@ -61,56 +56,20 @@
         <div class="marker marker-85">50.000</div>
         <div class="marker marker-100">50.000+</div>
       </div>
-
-      <input type="range" id="clientCount" step="2500"  class="range-slider" min="0" max="15000" value="500"
-        onchange="updateValue()">
-      <span id="clientCountValue">500</span>
+      <input type="range" id="clientCount" step="2500" class="range-slider" min="0" max="15000" value="500" onchange="updateValue()">
+      <span id="clientCountValue" style="opacity:0;">500</span>
     </div>
 
-
     <script>
-      function updateValue() {
+
+    function updateValue() {
         var range = document.getElementById("clientCount");
         var selectedValue = range.value;
         var selectedValueDisplay = document.getElementById("clientCountValue");
         selectedValueDisplay.textContent = selectedValue;
       }
 
-      
-    </script>
-
-    <table id="priceTable">
-      <tr>
-        <th>Plan</th>
-        <th>Price</th>
-      </tr>
-
-      <tr>
-        <td>Standard Plan</td>
-        <td class="starter-col">
-          <span id="standardPrice">20</span><span> / monthly</span><br>
-          <span id="standardPriceAnual">200</span><span> / anual</span>
-        </td>
-      </tr>
-      <tr>
-        <td>Premium Plan</td>
-        <td>
-          <span id="premiumPrice">30</span><span>/ monthly</span><br>
-          <span id="premiumPriceAnual">300 </span> / anual</span>
-        </td>
-      </tr>
-    </table>
-
-    <div id="priceForm" style="display: none;">
-      <h2 class="text-center">Contact us for further informations</h2>
-    </div>
-
-
-  </div>
-
-  <script>
-
-    const rangeInputs = document.querySelectorAll('input[type="range"]')
+    const rangeInputs = document.querySelectorAll('input[type="range"]');
 
     function handleInputChange(e) {
       let target = e.target
@@ -128,8 +87,37 @@
       input.addEventListener('input', handleInputChange)
     })
 
-
   </script>
+
+    <table id="priceTable">
+
+      <tr>
+        <th>Plan</th>
+        <th>Price</th>
+      </tr>
+
+      <tr>
+        <td>Standard Plan</td>
+
+        <td class="starter-col">
+          <span id="standardPrice">20</span><span> / monthly</span><br>
+          <span id="standardPriceAnual">200</span><span> / anual</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Premium Plan</td>
+        <td>
+          <span id="premiumPrice">30</span><span>/ monthly</span><br>
+          <span id="premiumPriceAnual">300 </span> / anual</span>
+        </td>
+      </tr>
+    </table>
+
+
+    <div id="priceForm" style="display: none;">
+      <h2 class="text-center">Contact us for further informations</h2>
+    </div>
+
 
   <script>
     const planTypeSwitch = document.getElementById('planTypeSwitch');
@@ -175,6 +163,7 @@
         document.querySelector(".marker-0").classList.add("active");
         document.querySelector(".marker-15").classList.add("active");
 
+        document.querySelector(".starter-col").classList.remove("inactive");
         document.querySelector("#priceTable").style.display = "table";
         document.querySelector("#priceForm").style.display = "none";
 
@@ -253,9 +242,5 @@
 
     updatePrices(); // Initialize the prices
   </script>
-
-
-
-</body>
 
 </html>
