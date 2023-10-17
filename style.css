@@ -3,6 +3,11 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
 .switch input[type=checkbox]{
 	height: 0;
 	width: 0;
