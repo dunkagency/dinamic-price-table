@@ -213,7 +213,7 @@
                 <option value="Philippines">Philippines</option>
                 <option value="Pitcairn">Pitcairn</option>
                 <option value="Poland">Poland</option>
-                <option value="Portugal">Portugal</option>
+                <option value="Portugal" selected >Portugal</option>
                 <option value="Puerto Rico">Puerto Rico</option>
                 <option value="Qatar">Qatar</option>
                 <option value="Reunion">Reunion</option>
@@ -294,7 +294,7 @@
         </div>
 
 
-        <table>
+        <table style="margin: 30px 0;">
             <tr>
                 <th>Plan</th>
                 <th>Price</th>
@@ -344,7 +344,7 @@
                         "Kyrgyzstan", "Laos", "Lebanon", "Maldives", "Marshall Islands", "Micronesia", "Mongolia", "Myanmar",
                         "Nauru", "Nepal", "Nicaragua", "North Korea", "Oman", "Pakistan", "Palau", "Palestine State", "Panama",
                         "Paraguay", "Peru", "Philippines", "Qatar", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines",
-                        "Samoa", "Saudi Arabia", "Seychelles", "Singapore", "Solomon Islands", "South Sudan", "Sri Lanka",
+                        "Samoa", "Saudi Arabia", "Seychelles", "Singapore", "Solomon Islands", "South Sudan", "Sri Lanka", "American Samoa",
                         "Suriname", "Syria", "Tajikistan", "Thailand", "Timor-Leste", "Trinidad and Tobago", "Turkmenistan", "Tuvalu", 
                         "United Arab Emirates", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Yemen"],
 
@@ -356,6 +356,18 @@
                         "GroupI": ["Cabo Verde", "Malaysia"],
                         "GroupJ": ["Luxembourg", "Germany", "Netherland", "New Zealand"],
                         "GroupK": ["Spain", "United Kingdon"],
+                        "GroupL": ["Angola"],
+                        "GroupM": ["Austraia"],
+                        "GroupN": ["Brazil"],
+                        "GroupO": ["Chile"],
+                        "GroupP": ["Colombia"],
+                        "GroupQ": ["Mexico"],
+                        "GroupR": ["Mozambique"],
+                        "GroupS": ["Nigeria"],
+                        "GroupT": ["Portugal"],
+                        "GroupU": ["South of Africa"],
+                        "GroupV": ["Switzerland"],
+                        "GroupX": ["United States"],
             };
 
             function updatePrice() {
@@ -371,107 +383,270 @@
                     }
                 }
 
-                if (selectedGroup === "") {
+
+                /* if (selectedGroup === "") {
                     selectedGroup = "GroupD"; // Default to GroupD if the country is not in any other group
-                }
+                } */
 
                 // Define prices based on the selected duration and country group
                 const prices = {
-                    //Recurring
-                    true: {
-                        "GroupA": {
-                            "1000": 45,
-                            "5000": `211,5`,
-                            "10000": 405,
-                            "25000": `967,5`,
-                        },
-                        "GroupB": {
-                            "1000": 90,
-                            "5000": `661,5`,
-                            "10000": `1.305`,
-                            "25000": `3.217,5`,
-                        },
-                        "GroupC": {
-                            "1000": `135`,
-                            "5000": `661,5`,
-                            "10000": `1.305`,
-                            "25000": `3.217,5`,
-                        },
-                        "GroupD": {
-                            "1000": `63,00`,
-                            "5000": `301,50`,
-                            "10000": `585`,
-                            "25000": `1.417,5`,
-                        },
-                        "GroupE": {
-                            "1000": `72`,
-                            "5000": `345,5`,
-                            "10000": `675`,
-                            "25000": `1.642,5`,
-                        },
-                        "GroupF": {
-                            "1000": 27,
-                            "5000": `121,5`,
-                            "10000": 225,
-                            "25000": `517,5`,
-                        }
-                    },
-                    
-                    //One Shot
-                    false: {
                         "GroupA": {
                             "1000": 50,
                             "5000": 235,
                             "10000": 450,
-                            "25000": 1.075
+                            "25000": 1075
                         },
                         "GroupB": {
                             "1000": 100,
                             "5000": 485,
                             "10000": 950,
-                            "25000": `2.325,5`
+                            "25000": 2325
                         },
                         "GroupC": {
                             "1000": 150,
                             "5000": 735,
-                            "10000": 1.450,
-                            "25000": 3.575
+                            "10000": 1450,
+                            "25000": 3575
                         },
                         "GroupD": {
                             "1000": 70,
                             "5000": 335,
                             "10000": 650,
-                            "25000": 1.575
+                            "25000": 1575
                         },
                         "GroupE": {
                             "1000": 80,
                             "5000": 385,
                             "10000": 750,
-                            "25000": 1.825
+                            "25000": 1825
                         },
                         "GroupF": {
                             "1000": 30,
                             "5000": 135,
                             "10000": 250,
                             "25000": 575
-                        }
-                    }
+                        },
+                        "GroupG": {
+                            "1000": 60,
+                            "5000": 285,
+                            "10000": 550,
+                            "25000": 1325,
+                        },
+                        "GroupH": {
+                            "1000": 150,
+                            "5000": 735,
+                            "10000": 1450,
+                            "25000": 3575,
+                        },
+                        "GroupI": {
+                            "1000": 110,
+                            "5000": 535,
+                            "10000": 1050,
+                            "25000": 2575,
+                        },
+                        "GroupJ": {
+                            "1000": 100,
+                            "5000": 485,
+                            "10000": 950,
+                            "25000": 2325,
+                        },
+                        "GroupK": {
+                            "1000": 45,
+                            "5000": 205,
+                            "10000": 390,
+                            "25000": 950,
+                        },
+                        "GroupL": {
+                            "1000": 11,
+                            "5000": 49,
+                            "10000": 95,
+                            "25000": 227.50
+                        },
+                        "GroupM": {
+                            "1000": 25,
+                            "5000": 115,
+                            "10000": 210,
+                            "25000": 475
+                        },
+                        "GroupN": {
+                            "1000": 20,
+                            "5000": 85,
+                            "10000": 150,
+                            "25000": 350
+                        },
+                        "GroupO": {
+                            "1000": 9,
+                            "5000": 43.5,
+                            "10000": 85,
+                            "25000": 207.5
+                        },
+                        "GroupP": {
+                            "1000": 2,
+                            "5000": 8.50,
+                            "10000": 15,
+                            "25000": 32.50
+                        },
+                        "GroupQ": {
+                            "1000": 7.50,
+                            "5000": 36.50,
+                            "10000": 71,
+                            "25000": 172.50
+                        },
+                        "GroupR": {
+                            "1000": 37,
+                            "5000": 160,
+                            "10000": 300,
+                            "25000": 750
+                        },
+                        "GroupS": {
+                            "1000": 120,
+                            "5000": 585,
+                            "10000": 1150,
+                            "25000": 2825
+                        },
+                        "GroupT": {
+                            "1000": 39,
+                            "5000": 180,
+                            "10000": 300,
+                            "25000": 700
+                        },
+                        "GroupU": {
+                            "1000": 10,
+                            "5000": 48.5,
+                            "10000": 95,
+                            "25000": 232.5
+                        },
+                        "GroupV": {
+                            "1000": 75,
+                            "5000": 360,
+                            "10000": 700,
+                            "25000": 1700
+                        },
+                        "GroupX": {
+                            "1000": 25,
+                            "5000": 110,
+                            "10000": 200,
+                            "25000": 450
+                        },
+                        
+                };
+
+                // Calculate recurring price (with 10% discount)
+                const recurringPrices = {
+                    "1000": (prices[selectedGroup]["1000"] * 0.9),
+                    "5000":  (prices[selectedGroup]["5000"]  * 0.9),
+                    "10000": (prices[selectedGroup]["10000"] * 0.9),
+                    "25000": (prices[selectedGroup]["25000"] * 0.9),
                 };
 
                 // Update the table with the selected prices
-                document.getElementById("onePrice").textContent = `${prices[isRecurring][selectedGroup]["1000"]}€`;
-                document.getElementById("fivePrice").textContent = `${prices[isRecurring][selectedGroup]["5000"]}€`;
-                document.getElementById("tenPrice").textContent = `${prices[isRecurring][selectedGroup]["10000"]}€`;
-                document.getElementById("twentyfivePrice").textContent = `${prices[isRecurring][selectedGroup]["25000"]}€`;
+                
+                if (isRecurring) {
+                    document.getElementById("onePrice").textContent = `${recurringPrices['1000']}€`.replace('.', ',');
+                    document.getElementById("fivePrice").textContent = `${recurringPrices["5000"]}€`.replace('.', ',');
+                    document.getElementById("tenPrice").textContent = `${recurringPrices["10000"]}€`.replace('.', ',');
+                    document.getElementById("twentyfivePrice").textContent = `${recurringPrices["25000"]}€`.replace('.', ',');
+                } else {
+                    document.getElementById("onePrice").textContent = `${prices[selectedGroup]['1000']}€`.replace('.', ',');
+                    document.getElementById("fivePrice").textContent = `${prices[selectedGroup]["5000"]}€`.replace('.', ',');
+                    document.getElementById("tenPrice").textContent = `${prices[selectedGroup]["10000"]}€`.replace('.', ',');
+                    document.getElementById("twentyfivePrice").textContent = `${prices[selectedGroup]["25000"]}€`.replace('.', ',');
+                }
             }
 
             // Initial price update
             updatePrice();
+            </script>
 
 
+            <div class="pricing-time">
+                <label class="toggle-label">One-shot</label>
+                <label class="switch">
+                    <input id="duration2" type="checkbox" onchange="updatePrice2()">
+                    <span class="slider round"></span>
+                </label>
+                <label class="toggle-label">recurring (Save 10%)</label>
+            </div>
 
 
-        </script>
+            <table style="margin: 30px 0;">
+                <tr>
+                    <th>Plan</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <td>10.000 Emails</td>
+                    <td id="tenEmails" class="price">
+                        15
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>50.000 Emails</td>
+                    <td id="fiftyEmails" class="price">
+                        50
+                    </td>
+                </tr>
+                <tr>
+                    <td>80.000 Emails</td>
+                    <td id="eightyEmails" class="price">
+                        64
+                    </td>
+                </tr>
+                <tr>
+                    <td>300.000 Emails</td>
+                    <td id="threeHundredEmails" class="price">
+                        150
+                    </td>
+                </tr>
+            </table>
+
+            <script>
+
+
+                function updatePrice2() {
+                    const isRecurring2 = document.getElementById("duration2").checked;
+                
+
+                    // Define prices based on the selected duration and country group
+                    const prices2 = {
+                            "emails": {
+                                "one": 15,
+                                "two": 50,
+                                "three": 64,
+                                "four": 150
+                            },
+                        
+                    };
+
+                    // Calculate recurring price (with 10% discount)
+                    const recurringPrices2 = {
+                        "one": (prices2.emails["one"] * 0.9).toFixed(2),
+                        "two":  (prices2.emails["two"]  * 0.9).toFixed(2),
+                        "three": (prices2.emails["three"] * 0.9).toFixed(2),
+                        "four": (prices2.emails["four"] * 0.9).toFixed(2),
+                    };
+
+                    // Update the table with the selected prices
+                    
+                    if (isRecurring2) {
+                        document.getElementById("tenEmails").textContent = `${recurringPrices2['one']}€`.replace('.', ',');
+                        document.getElementById("fiftyEmails").textContent = `${recurringPrices2["two"]}€`.replace('.', ',');
+                        document.getElementById("eightyEmails").textContent = `${recurringPrices2["three"]}€`.replace('.', ',');
+                        document.getElementById("threeHundredEmails").textContent = `${recurringPrices2["four"]}€`.replace('.', ',');
+                    } else {
+                        document.getElementById("tenEmails").textContent = `${prices2.emails['one']}€`.replace('.', ',');
+                        document.getElementById("fiftyEmails").textContent = `${prices2.emails["two"]}€`.replace('.', ',');
+                        document.getElementById("eightyEmails").textContent = `${prices2.emails["three"]}€`.replace('.', ',');
+                        document.getElementById("threeHundredEmails").textContent = `${prices2.emails["four"]}€`.replace('.', ',');
+                    }
+                }
+
+                // Initial price update
+                updatePrice2();
+
+
+            </script>
     </div>
 
     <!-- Include Choices JavaScript (latest) -->
