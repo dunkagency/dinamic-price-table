@@ -147,7 +147,6 @@
           marker.classList.remove('active');
         });
         document.querySelector(".marker-0").classList.add("active");
-        document.querySelector(".starter-col").classList.remove("inactive");
         document.querySelector("#priceTable").style.display = "table";
         document.querySelector("#priceForm").style.display = "none";
 
@@ -160,7 +159,6 @@
         document.querySelector(".marker-0").classList.add("active");
         document.querySelector(".marker-15").classList.add("active");
 
-        document.querySelector(".starter-col").classList.remove("inactive");
         document.querySelector("#priceTable").style.display = "table";
         document.querySelector("#priceForm").style.display = "none";
 
@@ -174,13 +172,12 @@
         document.querySelector(".marker-15").classList.add("active");
         document.querySelector(".marker-25").classList.add("active");
 
-        document.querySelector(".starter-col").classList.remove("inactive");
         document.querySelector("#priceTable").style.display = "table";
         document.querySelector("#priceForm").style.display = "none";
 
 
       } else if (clientCount == 7500) { //10000
-        standardPlanPrice = planType === 'monthly' ? 26.4 : 26.4;
+        standardPlanPrice = planType === 'monthly' ? 40.9 : 37.2;
         premiumPlanPrice = planType === 'monthly' ? 61.40 : 55.80;
         markers.forEach((marker) => {
           marker.classList.add('active');
@@ -188,12 +185,11 @@
         document.querySelector(".marker-65").classList.remove("active");
         document.querySelector(".marker-85").classList.remove("active");
         document.querySelector(".marker-100").classList.remove("active");
-        document.querySelector(".starter-col").classList.add("inactive");
         document.querySelector("#priceTable").style.display = "table";
         document.querySelector("#priceForm").style.display = "none";
 
       } else if (clientCount == 10000) { //25000
-        standardPlanPrice = planType === 'monthly' ? 26.4 : 26.4;
+        standardPlanPrice = planType === 'monthly' ? 83.1 : 75.5;
         premiumPlanPrice = planType === 'monthly' ? 124.60 : 113.30;
         markers.forEach((marker) => {
           marker.classList.add('active');
@@ -201,18 +197,16 @@
         document.querySelector(".marker-85").classList.remove("active");
         document.querySelector(".marker-100").classList.remove("active");
       
-        document.querySelector(".starter-col").classList.add("inactive");
         document.querySelector("#priceTable").style.display = "table";
         document.querySelector("#priceForm").style.display = "none";
 
       } else if (clientCount == 12500) { //50000
-        standardPlanPrice = planType === 'monthly' ? 26.4 : 26.4;
+        standardPlanPrice = planType === 'monthly' ? 124.6 : 113.3;
         premiumPlanPrice = planType === 'monthly' ? 187.00 : 170.00;
         markers.forEach((marker) => {
           marker.classList.add('active');
         });
         document.querySelector(".marker-100").classList.remove("active");
-        document.querySelector(".starter-col").classList.add("inactive");
         document.querySelector("#priceTable").style.display = "table";
         document.querySelector("#priceForm").style.display = "none";
 
