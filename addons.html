@@ -533,10 +533,10 @@
 
                 // Calculate recurring price (with 10% discount)
                 const recurringPrices = {
-                    "1000": (prices[selectedGroup]["1000"] * 0.9),
-                    "5000":  (prices[selectedGroup]["5000"]  * 0.9),
-                    "10000": (prices[selectedGroup]["10000"] * 0.9),
-                    "25000": (prices[selectedGroup]["25000"] * 0.9),
+                    "1000": (prices[selectedGroup]["1000"] * 0.9).toFixed(0),
+                    "5000":  (prices[selectedGroup]["5000"]  * 0.9).toFixed(0),
+                    "10000": (prices[selectedGroup]["10000"] * 0.9).toFixed(0),
+                    "25000": (prices[selectedGroup]["25000"] * 0.9).toFixed(0),
                 };
 
                 // Update the table with the selected prices
