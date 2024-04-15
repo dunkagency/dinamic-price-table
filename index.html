@@ -98,14 +98,16 @@
 
         <td class="starter-col">
           <span id="standardPrice">20</span><span> / monthly</span><br>
-          <span id="standardPriceAnual">200</span><span> / anual</span>
+          <span id="standardPriceAnual">200</span><span> / anual</span><br>
+          <span id="standardEmailsMonth"><strong>2000</strong></span><span> emails/ month</span>
         </td>
       </tr>
       <tr>
         <td>Premium Plan</td>
         <td>
           <span id="premiumPrice">30</span><span>/ monthly</span><br>
-          <span id="premiumPriceAnual">300 </span> / anual</span>
+          <span id="premiumPriceAnual">300 </span> / anual</span><br>
+          <span id="premiumEmailsMonth"><strong>2000</strong></span><span> / anual</span>
         </td>
       </tr>
     </table>
@@ -124,8 +126,10 @@
     const basicPrice = document.getElementById('basicPrice');
     const standardPrice = document.getElementById('standardPrice');
     const standardPriceAnual = document.getElementById('standardPriceAnual');
+    const standardEmailsMonth = document.querySelector('#standardEmailsMonth > strong');
     const premiumPrice = document.getElementById('premiumPrice');
-    const premiumPriceAnual = document.getElementById('premiumPriceAnual'); 
+    const premiumPriceAnual = document.getElementById('premiumPriceAnual');
+    const premiumEmailsMonth = document.querySelector('#premiumEmailsMonth > strong');
     markers = document.querySelectorAll('.marker');
     
     planTypeSwitch.addEventListener('change', updatePrices);
@@ -141,14 +145,16 @@
       let basicPlanPrice, standardPlanPrice, premiumPlanPrice, standardPlanPriceAnual, premiumPlanPriceAnual;
 
       if (clientCount == 0) { //500
-        standardPlanPrice = planType === 'monthly' ? 10.9 : 9.9;
-        premiumPlanPrice = planType === 'monthly' ? 16.30 : 14.85;
+        standardPlanPrice = planType === 'monthly' ? 10.9 : 9.81;
+        premiumPlanPrice = planType === 'monthly' ? 15.90 : 14.31;
         markers.forEach((marker) => {
           marker.classList.remove('active');
         });
         document.querySelector(".marker-0").classList.add("active");
         document.querySelector("#priceTable").style.display = "table";
         document.querySelector("#priceForm").style.display = "none";
+        standardEmailsMonth.textContent = "2.000"
+        premiumEmailsMonth.textContent = "2.000"
 
       } else if (clientCount == 2500) { //2500
         standardPlanPrice = planType === 'monthly' ? 13.2 : 12.00;
@@ -161,6 +167,8 @@
 
         document.querySelector("#priceTable").style.display = "table";
         document.querySelector("#priceForm").style.display = "none";
+        standardEmailsMonth.textContent = "10.000"
+        premiumEmailsMonth.textContent = "10.000"
 
       } else if (clientCount == 5000) { //5000
         standardPlanPrice = planType === 'monthly' ? 26.4 : 24.0;
@@ -174,6 +182,8 @@
 
         document.querySelector("#priceTable").style.display = "table";
         document.querySelector("#priceForm").style.display = "none";
+        standardEmailsMonth.textContent = "20.000"
+        premiumEmailsMonth.textContent = "20.000"
 
 
       } else if (clientCount == 7500) { //10000
@@ -187,6 +197,9 @@
         document.querySelector(".marker-100").classList.remove("active");
         document.querySelector("#priceTable").style.display = "table";
         document.querySelector("#priceForm").style.display = "none";
+        standardEmailsMonth.textContent = "40.000"
+        premiumEmailsMonth.textContent = "40.000"
+
 
       } else if (clientCount == 10000) { //25000
         standardPlanPrice = planType === 'monthly' ? 83.1 : 75.5;
@@ -199,6 +212,9 @@
       
         document.querySelector("#priceTable").style.display = "table";
         document.querySelector("#priceForm").style.display = "none";
+        standardEmailsMonth.textContent = "100.000"
+        premiumEmailsMonth.textContent = "100.000"
+
 
       } else if (clientCount == 12500) { //50000
         standardPlanPrice = planType === 'monthly' ? 124.6 : 113.3;
@@ -209,6 +225,8 @@
         document.querySelector(".marker-100").classList.remove("active");
         document.querySelector("#priceTable").style.display = "table";
         document.querySelector("#priceForm").style.display = "none";
+        standardEmailsMonth.textContent = "200.000"
+        premiumEmailsMonth.textContent = "200.000"
 
       } else if (clientCount == 15000) { ///50000+
         standardPlanPrice = planType === 'monthly' ? 0 : 0;

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City Autocomplete</title>
+</head>
+<body>
+
+  <style>
+    .autocomplete {
+      display: flex;
+      margin-bottom: 20px;
+      gap: 15px;
+    }
+
+    .wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .city-input {
+      width: 300px;
+      margin-bottom: 10px;
+      padding: 8px;
+    }
+
+    .autocomplete-list {
+      position: absolute;
+      top: 100%;
+      z-index: 1;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+      background-color: #FFF;
+      width: 300px;
+      border-radius: 6px;
+      max-height: 150px;
+      overflow-y: auto;
+    }
+
+    .autocomplete-list li {
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+
+    .autocomplete-list li:hover {
+      background-color: #f0f0f0;
+    }
+
+    .autocomplete-list li.selected {
+      background-color: #007BFF;
+      color: #fff;
+    }
+
+  </style>
+
+  <div class="autocomplete">
+    <div class="wrapper">
+      <label for="fromCity">From City:</label>
+      <input type="text" id="fromCity" class="city-input" aria-autocomplete="list" role="combobox" aria-owns="autocomplete-from-list">
+      <ul id="autocomplete-from-list" class="autocomplete-list" role="listbox" aria-labelledby="fromCity"></ul>
+    </div>
+    <div class="wrapper">
+      <label for="toCity">To City:</label>
+      <input type="text" id="toCity" class="city-input" aria-autocomplete="list" role="combobox" aria-owns="autocomplete-to-list">
+      <ul id="autocomplete-to-list" class="autocomplete-list" role="listbox" aria-labelledby="toCity"></ul>
+    </div>
+  </div>
+
+  <script src="autocomplete.js"></script>
+</body>
+</html>

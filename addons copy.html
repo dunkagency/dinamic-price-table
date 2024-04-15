@@ -28,20 +28,18 @@
             font-weight: bold;
         }
 
-        .pricing-time {
-            margin-top: 40px;
+        .hidden {
+            display: none;
         }
-
-        
     </style>
 </head>
 
-<body>
+<body class="translatepress-pt_PT">
     <div class="wrapper">
         <h1>Choose a Plan</h1>
 
-        <div id="select-en">
-            <label for="country">Country</label>
+        <div class="slider-range hidden" id="select-en">
+            <label for="country">Selecionar pais:</label>
             <select class="js-choice" id="country" onchange="updatePrice()">
                 <option value="Afghanistan">Afghanistan</option>
                 <option value="Albania">Albania</option>
@@ -244,16 +242,12 @@
             </select>
         </div>
 
-        <div id="select-pt">
-            <label for="country">Selecionar país:</label>
+        <div class="slider-range hidden" id="select-pt">
+            <label for="country">Select Country:</label>
             <select class="js-choice" id="country" onchange="updatePrice()">
-                <option value="Afghanistan">Afeganistão</option>
-                <option value="South Africa">África do Sul</option>
-                <option value="Albania">Albania</option>
+                <option value="South Africa">Africa do Sul</option>
                 <option value="Germany">Alemanha</option>
                 <option value="Saudi Arabia">Arábia Saudita</option>
-                <option value="Algeria">Argélia</option>
-                <option value="Argentina">Argentina</option>
                 <option value="Armenia">Arménia</option>
                 <option value="Australia">Austrália</option>
                 <option value="Austria">Áustria</option>
@@ -810,9 +804,7 @@
     <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
     <script>
         const element = document.querySelector('.js-choice');
-        const element2 = document.querySelector('.js-choice-pt');
         const choices = new Choices(element);
-        const choices2 = new Choices(element2);
 
         document.addEventListener('DOMContentLoaded', function () {
             // Get the body element
@@ -821,11 +813,10 @@
             // Check if body has a specific class
             if (body.classList.contains('translatepress-pt_PT')) {
                 // If true, show content1
-                document.getElementById('select-en').remove()
-             
+                document.getElementById('select-pt').classList.remove('hidden');
             } else {
                 // If false, show content2
-                document.getElementById('select-pt').remove()
+                document.getElementById('select-en').classList.remove('hidden');
             }
         });
     </script>
